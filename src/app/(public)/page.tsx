@@ -1,12 +1,6 @@
-"use client"
-
-import React, { useEffect } from 'react'
+import React from 'react'
 
 const Home = () => {
-  useEffect(() => {
-    
-  })
-
   return (
     <div>Home</div>
   )
