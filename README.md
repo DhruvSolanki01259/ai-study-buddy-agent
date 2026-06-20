@@ -2,7 +2,6 @@ Here’s a cleaned, structured, GitHub-ready README that looks professional, rea
 
 ---
 
-```md
 # 🧠 AI Study Buddy Agent
 
 A smart AI-powered learning assistant that transforms any programming question into structured, beginner-friendly explanations with topics, examples, and summaries.
