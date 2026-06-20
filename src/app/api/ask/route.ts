@@ -41,26 +41,15 @@ export const POST = async (request: NextRequest) => {
     ]);
 
     const raw = response.content as string;
-    const matches = raw.match(/```json\s*([\s\S]*?)\s*```/g);
-    if (!matches || matches.length === 0) {
-      throw new Error("No JSON found");
-    }
-
-    const end = matches.length - 1;
-    const actualJSON = matches[end]
-      .replace(/```json/, "")
-      .replace(/```/, "")
-      .trim();
-
-    const parsedJSON = JSON.parse(actualJSON);
-    const validateOutput = OutputScehma.parse(parsedJSON);
+    const data = JSON.parse(raw);
+    const parsed = OutputScehma.parse(data);
 
     return NextResponse.json(
       {
         success: true,
         error: null,
         message: "Request Sent Successfully",
-        data: validateOutput ?? "",
+        data: parsed,
       },
       { status: 200 },
     );
